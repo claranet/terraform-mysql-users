@@ -119,7 +119,7 @@ module "mysql_users" {
 
 | Name | Version |
 |------|---------|
-| mysql | >= 1.9 |
+| mysql | ~> 1.12 |
 | random | >= 3.0 |
 
 ## Modules
@@ -130,8 +130,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [mysql_grant.role](https://registry.terraform.io/providers/terraform-providers/mysql/latest/docs/resources/grant) | resource |
-| [mysql_user.user](https://registry.terraform.io/providers/terraform-providers/mysql/latest/docs/resources/user) | resource |
+| [mysql_grant.role](https://registry.terraform.io/providers/Paynetworx/mysql/latest/docs/resources/grant) | resource |
+| [mysql_user.user](https://registry.terraform.io/providers/Paynetworx/mysql/latest/docs/resources/user) | resource |
 | [random_password.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 
 ## Inputs
