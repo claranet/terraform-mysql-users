@@ -71,13 +71,9 @@ module "db_maria" {
   }
 }
 
-locals {
-  administrator_login = format("%s@%s", module.db_maria.mariadb_administrator_login, module.db_maria.mariadb_server_name)
-}
-
 provider "mysql" {
   endpoint = format("%s:3306", module.db_maria.mariadb_fqdn)
-  username = local.administrator_login
+  username = module.db_maria.mariadb_administrator_login
   password = module.db_maria.mariadb_administrator_password
 
   tls = true
