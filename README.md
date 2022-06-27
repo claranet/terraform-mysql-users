@@ -1,4 +1,8 @@
-# MySQL user module
+# MySQL Users module
+[![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/modules/claranet/users/mysql/)
+
+Terraform module using `MySQL` provider to create users and manage their roles on an existing Database.
+This module will be used in combination with others MySQL modules (like [`azure-db-mysql`](https://registry.terraform.io/modules/claranet/db-mysql/azurerm/) for example).
 
 <!-- BEGIN_TF_DOCS -->
 ## Global versioning rule for Claranet Azure modules
@@ -101,7 +105,8 @@ provider "mysql" {
 }
 
 module "mysql_users" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/projects/cloud/azure/terraform/mysql-users.git?ref=AZ-762_init_mysql_users"
+  source  = "claranet/users/mysql"
+  version = "x.x.x"
 
   for_each = toset(module.db_maria.mariadb_databases_names)
 
