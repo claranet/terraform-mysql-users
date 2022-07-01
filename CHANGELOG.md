@@ -1,3 +1,8 @@
+# Unreleased
+
+Fixed
+  * AZ-762: Fix `password` output value
+
 # v6.0.0 - 2022-06-27
 
 Added
