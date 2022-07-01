@@ -1,10 +1,10 @@
 output "user" {
-  value       = mysql_user.user.user
   description = "User"
+  value       = mysql_user.user.user
 }
 
 output "password" {
-  value       = mysql_user.user.plaintext_password
-  sensitive   = true
   description = "Password"
+  value       = coalesce(var.password, random_password.password.result)
+  sensitive   = true
 }
