@@ -28,6 +28,6 @@ variable "host" {
 
 variable "privileges" {
   type        = list(any)
-  default     = ["ALL"]
+  default     = ["ALL PRIVILEGES"]
   description = "List of privileges"
 }
