@@ -1,4 +1,4 @@
-# Unreleased
+# v6.0.2 - 2023-02-24
 
 Fixed
   * AZ-1008: Fix `privileges` default value
