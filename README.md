@@ -151,7 +151,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| database | Database name | `string` | n/a | yes |
+| databases | Databases names | `list(any)` | n/a | yes |
 | host | User Host | `string` | `"%"` | no |
 | password | Password if not generated | `string` | `null` | no |
 | privileges | List of privileges | `list(any)` | <pre>[<br/>  "ALL PRIVILEGES"<br/>]</pre> | no |

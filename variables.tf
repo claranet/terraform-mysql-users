@@ -9,9 +9,9 @@ variable "password" {
   description = "Password if not generated"
 }
 
-variable "database" {
-  type        = string
-  description = "Database name"
+variable "databases" {
+  type        = list(any)
+  description = "Databases names"
 }
 
 variable "user_suffix_enabled" {
