@@ -1,8 +1,3 @@
-# v6.0.4 - 2024-01-28
-
-Added
-  * AZ-1505: Grant permissions on several databases
-
 ## 6.0.3 (2024-10-08)
 
 ### Documentation
