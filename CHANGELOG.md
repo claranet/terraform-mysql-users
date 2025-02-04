@@ -1,3 +1,34 @@
+## 6.1.0 (2025-02-04)
+
+### Features
+
+* **AZ-1505:** grant permissions on several databases f857b1a
+
+### Miscellaneous Chores
+
+* **deps:** update dependency opentofu to v1.8.4 0f3697d
+* **deps:** update dependency opentofu to v1.8.6 29c5631
+* **deps:** update dependency opentofu to v1.8.8 fec9437
+* **deps:** update dependency opentofu to v1.9.0 3442596
+* **deps:** update dependency pre-commit to v4.0.1 5ed28a7
+* **deps:** update dependency pre-commit to v4.1.0 bdfc363
+* **deps:** update dependency tflint to v0.54.0 974e970
+* **deps:** update dependency tflint to v0.55.0 da82498
+* **deps:** update dependency tflint to v0.55.1 01053e7
+* **deps:** update dependency trivy to v0.56.2 9dbe6d0
+* **deps:** update dependency trivy to v0.57.1 6483cb7
+* **deps:** update dependency trivy to v0.59.0 df997a4
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.19.0 7bdb9c9
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.20.0 6ddfaf1
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.96.2 d112006
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.97.1 ce6a45c
+* **deps:** update pre-commit hook antonbabenko/pre-commit-terraform to v1.97.2 3f87666
+* **deps:** update tools c897ead
+* **deps:** update tools 20fdb7f
+* **deps:** update tools e27eb52
+* **deps:** update tools 687deb7
+* misc 0b45f23
+
 ## 6.0.3 (2024-10-08)
 
 ### Documentation
