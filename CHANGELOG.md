@@ -1,3 +1,14 @@
+## 6.1.1 (2025-02-17)
+
+### Bug Fixes
+
+* update example e2f4df4
+
+### Miscellaneous Chores
+
+* **deps:** update dependency trivy to v0.59.1 95216e2
+* **deps:** update pre-commit hook alessandrojcm/commitlint-pre-commit-hook to v9.21.0 43af303
+
 ## 6.1.0 (2025-02-04)
 
 ### Features
