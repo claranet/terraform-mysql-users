@@ -1,40 +1,43 @@
-module "db_maria" {
-  source  = "claranet/db-maria/azurerm"
+module "mysql_flexible" {
+  source  = "claranet/db-mysql-flexible/azurerm"
   version = "x.x.x"
 
-  client_name    = var.client_name
   location       = module.azure_region.location
   location_short = module.azure_region.location_short
+  client_name    = var.client_name
   environment    = var.environment
   stack          = var.stack
 
-  resource_group_name = module.rg.resource_group_name
+  resource_group_name = module.rg.name
 
-  tier     = "GeneralPurpose"
-  capacity = 4
+  tier          = "GeneralPurpose"
+  mysql_version = "8.0.21"
 
-  authorized_cidrs = {
-    rule1 = "10.0.0.0/24",
-    rule2 = "12.34.56.78/32"
+  allowed_cidrs = {
+    "peered-vnet"     = "10.0.0.0/24"
+    "customer-office" = "12.34.56.78/32"
   }
 
-  storage_mb                   = 5120
   backup_retention_days        = 10
   geo_redundant_backup_enabled = true
-  auto_grow_enabled            = false
 
-  administrator_login    = var.administrator_login
-  administrator_password = var.administrator_password
+  administrator_login = "azureadmin"
 
-  force_ssl = true
+  databases = {
+    "documents" = {
+      "charset"   = "utf8"
+      "collation" = "utf8_general_ci"
+    }
+  }
 
-  databases_names     = ["mydatabase"]
-  databases_collation = { mydatabase = "utf8_general_ci" }
-  databases_charset   = { mydatabase = "utf8" }
+  options = {
+    interactive_timeout = "600"
+    wait_timeout        = "260"
+  }
 
   logs_destinations_ids = [
-    module.logs.logs_storage_account_id,
-    module.logs.log_analytics_workspace_id
+    module.logs.id,
+    module.logs.storage_account_id,
   ]
 
   extra_tags = {
@@ -43,9 +46,9 @@ module "db_maria" {
 }
 
 provider "mysql" {
-  endpoint = format("%s:3306", module.db_maria.mariadb_fqdn)
-  username = module.db_maria.mariadb_administrator_login
-  password = module.db_maria.mariadb_administrator_password
+  endpoint = "${module.mysql_flexible.fqdn}:3306"
+  username = module.mysql_flexible.administrator_login
+  password = module.mysql_flexible.administrator_password
 
   tls = true
 }
@@ -54,8 +57,8 @@ module "mysql_users" {
   source  = "claranet/users/mysql"
   version = "x.x.x"
 
-  # user_suffix_enabled = true
-
   user      = "claranet-db"
-  databases = module.db_maria.mariadb_databases_names
+  databases = module.mysql_flexible.databases_names
+
+  # user_suffix_enabled = true
 }
