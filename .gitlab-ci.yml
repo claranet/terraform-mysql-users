@@ -8,3 +8,7 @@ include:
   - project: "claranet/projects/cloud/azure/terraform/ci"
     ref: master
     file: "/pipeline.yml"
+
+# Run committed job early
+committed:
+  needs: []
