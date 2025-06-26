@@ -3,15 +3,11 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.0"
+      version = ">= 4.0.0"
     }
     mysql = {
       source  = "Paynetworx/mysql"
       version = ">= 1.12"
-    }
-    azurecaf = {
-      source  = "claranet/azurecaf"
-      version = "1.2.28"
     }
   }
 }
