@@ -1,3 +1,13 @@
+## 8.0.0 (2025-06-26)
+
+### ⚠ BREAKING CHANGES
+
+* 💥 ✨ compatibility with Azure modules v8
+
+### Features
+
+* 💥 ✨ compatibility with Azure modules v8 68f41de
+
 ## 6.1.1 (2025-02-17)
 
 ### Bug Fixes
